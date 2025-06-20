@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "customizer-hidesidebar-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/customizerHidesidebar/CustomizerHidesidebarApplicationCustomizer.js",
+          "manifest": "./src/extensions/customizerHidesidebar/CustomizerHidesidebarApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomizerHidesidebarApplicationCustomizerStrings": "lib/extensions/customizerHidesidebar/loc/{locale}.js"
+  }
+}

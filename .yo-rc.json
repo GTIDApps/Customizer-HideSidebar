@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "customizer-hidesidebar",
+    "libraryId": "a4ec9d0d-776b-42e5-9d76-d72da1bcd6dc",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "customizer-hidesidebar",
+    "solutionShortDescription": "customizer-hidesidebar description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
