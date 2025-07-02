@@ -27,7 +27,7 @@ export default class ApplicationApplicationCustomizer
         if (canEdit) {
           console.log("User has edit permissions — App Bar stays.");
         } else {
-          element.remove();
+                    element.remove();
           this.injectCustomStyle();
           console.log("GT user only has view rights — App Bar removed.");
           console.log("Custom CSS injected to hide site logo and share access in SharePoint.");
@@ -98,11 +98,18 @@ export default class ApplicationApplicationCustomizer
       }
 
       .ms-HorizontalNavItems {
-        padding-left: 400px !important; 
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px !important; 
+      }
+
+      .mainHeader-90.mainHeader-90,
+      .adjacentTitleSubcell-97.adjacentTitleSubcell-97 {
+        padding-right: 0px !important;
       }
     `;
     document.head.appendChild(styleElement);
-    console.log('Custom CSS injected to hide site logo and share access in sharepoint and adjusted the navbar padding a bit bigger.');
+    console.log('adjusting nav bar padding');
   }
 
   private _onDispose(): void {
