@@ -25,12 +25,12 @@ export default class ApplicationApplicationCustomizer
       const element = document.getElementById("sp-appBar");
       if (element) {
         if (canEdit) {
-          console.log("User has edit permissions — App Bar stays.");
-        } else {
           element.remove();
           this.injectCustomStyle();
           console.log("GT user only has view rights — App Bar removed.");
           console.log("Custom CSS injected to hide site logo and share access in SharePoint.");
+        } else {
+          console.log("User has edit permissions — App Bar stays.");
         }
         clearInterval(checkExist);
       }
@@ -96,9 +96,13 @@ export default class ApplicationApplicationCustomizer
       button[data-automationid="ShareSiteButton"]{
         display: none !important;
       }
+
+      .ms-HorizontalNavItems {
+        padding-left: 400px !important; 
+      }
     `;
     document.head.appendChild(styleElement);
-    console.log('Custom CSS injected to hide site logo and share access in sharepoint.');
+    console.log('Custom CSS injected to hide site logo and share access in sharepoint and adjusted the navbar padding a bit bigger.');
   }
 
   private _onDispose(): void {
