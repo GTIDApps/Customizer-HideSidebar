@@ -27,7 +27,7 @@ export default class ApplicationApplicationCustomizer
         if (canEdit) {
           console.log("User has edit permissions — App Bar stays.");
         } else {
-                    element.remove();
+          element.remove();
           this.injectCustomStyle();
           console.log("GT user only has view rights — App Bar removed.");
           console.log("Custom CSS injected to hide site logo and share access in SharePoint.");
