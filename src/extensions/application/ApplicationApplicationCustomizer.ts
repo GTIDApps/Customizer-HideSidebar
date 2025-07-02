@@ -28,7 +28,9 @@ export default class ApplicationApplicationCustomizer
           console.log("User has edit permissions — App Bar stays.");
         } else {
           element.remove();
+          this.injectCustomStyle();
           console.log("GT user only has view rights — App Bar removed.");
+          console.log("Custom CSS injected to hide site logo and share access in SharePoint.");
         }
         clearInterval(checkExist);
       }
@@ -63,6 +65,40 @@ export default class ApplicationApplicationCustomizer
         }
       }
     }
+  }
+
+    private injectCustomStyle(): void {
+    const styleElement = document.createElement('style');
+    styleElement.type = 'text/css';
+    styleElement.textContent = `
+      #O365_SuiteBranding_container {
+        display: none !important;
+      }
+      #TipsNTricksButton_container{
+        display: none !important;
+      }
+      #GiveFeedbackButton_container{
+        display: none !important;
+      }
+      #O365_MainLink_Help_container{
+        display: none !important;
+      }
+      #O365_MainLink_Settings_container{
+        display: none !important;
+      }
+      #HeaderButtonRegion{
+        display: none !important;
+      }
+      #actionsSubcell-64{
+        display: none !important;
+      }
+      button[data-automationid="SiteHeaderFollowButton"], 
+      button[data-automationid="ShareSiteButton"]{
+        display: none !important;
+      }
+    `;
+    document.head.appendChild(styleElement);
+    console.log('Custom CSS injected to hide site logo and share access in sharepoint.');
   }
 
   private _onDispose(): void {
